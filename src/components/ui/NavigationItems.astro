@@ -1,0 +1,37 @@
+---
+
+
+const urls=[
+  {
+  id:"home",
+  path:"/",
+  label:"Home"
+},{
+  id:"blogs",
+  path:"/blogs",
+  label:"Blogs"
+},{
+  id:"cloudupskilling",
+  path:"/cloudupskilling",
+  label:"Upskilling in Cloud"
+}
+]
+
+---
+<ul class="navbar-nav  md:flex items-center ml-auto font-semibold">
+  {
+    urls.map(url =>
+    <li class="nav-item p-2 content-center">
+      <a
+        class={`nav-link hover:text-blue-600 dark:hover:text-gray-200 focus:text-blue-200 p-0 ${Astro.url.pathname===url.path?'underline font-extrabold':''}`}
+        href={url.path}
+        id={url.id}>{url.label}</a>
+    </li>
+
+    )
+  }
+    
+  </ul>
+  
+ 
+  
